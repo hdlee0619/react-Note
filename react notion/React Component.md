@@ -2,8 +2,38 @@
 
 리액트 공식문서에서의 컴포넌트는
 > - 컴포넌트를 통해 **UI를 재사용**이 가능한 개별적인 여러 조각으로 나누고, 각 조각을 개별적으로 살펴볼 수 있다.
+> - 덕분에 컴포넌트는 UI 구축 작업을 훨씬 쉽게 만들어 준다
 > - 개념적으로 컴포넌트는 ==JavaScript 함수==와 유사.
 > - "props"라고 하는 임의의 입력을 받은 후, 화면에 어떻게 표시되는지를 기술하는 ==React 엘리먼트를 반환==
+
+## DOM (명령형 프로그래밍)
+
+리액트의 컴포넌트 기반 개발 이전에는 브라우저에서 동적으로 변하는 UI를 표현하기 위해 직접 DOM객체를 조작을 하는 명령형 프로그래밍 방식으로 구현했다. 
+
+### 명령형(DOM)과 선언형(React)의 차이
+
+- 명령형으로 작성된 코드의 경우 출력을 위해 컴퓨터가 수행하는 절차를 일일히 코드로 작성해야함
+
+```javascript
+// Hello, World! 화면에 출력하기
+// 순수 javaScript 명령형 코드
+const root = document.getElementById('root'); 
+const header = document.createElement('h1'); 
+const headerContent = document.createTextNode(
+	'Hello, World!'
+);
+
+header.appendChild(headerContent); 
+root.appendChild(header);
+```
+
+- React는 내가 UI를 선언하고 render함수를 호출하면 react가 알아서 절차를 수행해 화면에 출력해준다.
+- **어떻게** 그러야할지는 React 내부에 잘 숨겨져 추상화 되어 있다. 
+```javascript
+// React 코드 (선언적인)
+const header = <h1>Hello World</h1>; // jsx
+ReactDOM.render(header, document.getElementById('root'));
+```
 
 ## React에서 컴포넌트를  표현하는 두 가지 방법
 
