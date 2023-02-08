@@ -13,7 +13,8 @@ const element = <h1>Hello, world!</h1>;
 즉, 자바스크립트 파일이 html을 그리는 것.
 ```
 
-→ [[DOM? virtual DOM ?#DOM]]  
+→ [DOM]([[DOM? virtual DOM ?#DOM]]) 에 렌더링 한다는 것?
+→ [리액트는 SPA](obsidian://open?vault=hdlee0619&file=react%2Freact%20notion%2FSPA%20%26%20MPA)
 
 HTML 태그는 .js 파일에서 쓸 수 없기 때문에 나온 것이 JSX이며, 자바스크립트 안에서 html 태그같은 마크업을 넣어 뷰(UI) 작업을 편하게 할 수 있다. 
 
