@@ -31,10 +31,43 @@ title: 그럼 JSX에서 쓰는 html 태그는 DOM 요소인가?
 리액트 돔을 구성하는 건 리액트 요소이고 DOM을 구성하는건 DOM 요소이다. 
 ```
 
+
 # 규칙
 
+#### 1. 태그는 꼭 닫아주기!
 
+#### 2. 무조건 1개의 엘리먼트를 반화하기!
 
-## 2. 무조건 1개의 엘리먼트를 반환할 것
+#### 3. JSX에서 javascript 값을 가져오려면 중괄호를 사용하기 !
 
-## 3. JSX 내에서 JS 문법을 사용할 때는 중괄호 열기
+JSX가 편한 이유는 html태그 내(JSX이지만)에서 JS문법을 사용할 수 있다. 
+→ map, 삼항 연산자 등등 사용이 가능.. 
+
+```jsx
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+
+function App() {
+  const number = 1;
+
+  return (
+    %3Cdiv className="App"%3E
+      <p>안녕하세요! 리액트 반입니다 :)</p>
+      {/* JSX 내에서 코드 주석은 이렇게 씁니다 :) */}
+      {/* 삼항 연산자를 사용했어요 */}
+      <p>{number > 10 ? number+'은 10보다 크다': number+'은 10보다 작다'}</p>
+    </div>
+  );
+}
+
+export default App;
+```
+
+#### 4. class 대신 className!
+
+JSX는 html이 아니기 때문에 속성값이 다른 경우가 있다. 
+
+#### 5. 인라인으로 style을 줄 수 있다. 
+
+주로 사용하진 않는다고 한다. 
