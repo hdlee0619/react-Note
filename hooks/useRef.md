@@ -82,27 +82,47 @@ c. 컴포넌트가 100번 렌더링 → `ref`에 저장한 값은 유지
 a. 렌더링이 되자마자 특정 input이 focusing 돼야 한다면 `useRef`를 사용할 수 있다. 
 [[input 태그 자동 focusing|항해99 과제 toDoList에서 사용]]
 
-#### 간단한 사용 코드
+#### 사용 코드 예
 
 ```jsx
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 
 function App() {
   const idRef = useRef("");
+  const pwRef = useRef("");
+
+  const [id, setId] = useState("");
+
+  const onIdChangeHandler = (event) => {
+    setId(event.target.value);
+  };
 
   // 렌더링이 될 때
   useEffect(() => {
     idRef.current.focus();
   }, []);
 
+  // useEffect 안에 조건을 넣은 이유?
+  useEffect(() => {
+    if (id.length >= 10) {
+      pwRef.current.focus();
+    }
+  }, [id]);
+
   return (
     <>
       <div>
-        아이디 : <input type="text" ref={idRef} />
+        아이디 :
+        <input
+          type="text"
+          ref={idRef}
+          value={id}
+          onChange={onIdChangeHandler}
+        />
       </div>
       <div>
-        비밀번호 : <input type="password" />
+        비밀번호 : <input type="password" ref={pwRef} />
       </div>
     </>
   );
@@ -110,3 +130,8 @@ function App() {
 
 export default App;
 ```
+
+**`useEffect()`안에 쓰지 않고 `onIdChangeHandler`내부에 조건을 달면 되지 않을까?**
+
+> 그렇게 된다면 `id.length = 11`이 되었을 때 조건이 발동 될 것이다. 
+> 왜냐하면 위의 코드에서 `setId`는 [[useState#왜 다르게 동작할까요?|배치 업데이트]]가 되고 있기 때문이다. 
