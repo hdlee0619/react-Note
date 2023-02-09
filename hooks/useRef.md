@@ -60,7 +60,7 @@ export default App;
 ```
 
 ```ad-important
-이렇게 설정된 ref 값은 컴포넌트가 계속해서 렌더링 되어도 unmount 전까지 값을 유직하게 됨
+이렇게 설정된 ref 값은 컴포넌트가 계속해서 렌더링 되어도 unmount 전까지 값을 유지하게 됨
 ```
 
 위와 같은 특징 때문에 useRef의 사용용도는 다음과 같다.
@@ -134,4 +134,4 @@ export default App;
 **`useEffect()`안에 쓰지 않고 `onIdChangeHandler`내부에 조건을 달면 되지 않을까?**
 
 > 그렇게 된다면 `id.length = 11`이 되었을 때 조건이 발동 될 것이다. 
-> 왜냐하면 위의 코드에서 `setId`는 [[useState#왜 다르게 동작할까요?|배치 업데이트]]가 되고 있기 때문이다. 
+> 왜냐하면 위의 코드에서 `setId`는 [[DOM? virtual DOM ?#Batch Update|배치 업데이트]]가 되고 있기 때문이다. 
