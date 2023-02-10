@@ -58,3 +58,13 @@ Global state는 컴포넌트에서 생성되지 않는다.
 - 리덕스는 `useState`를 통해 상태를 관리했을 때 발생하는 불편함을 일부 해소
 - 리덕스는 **중앙 state 관리소**(→ 접근 및 제어가 가능)를 가지고 있으며, 모든 state는 이곳에서 생성
 - `useState`로 생성한 state는 **Local State**, 리덕스에서 생성한 state는 **Global State**
+
+- - - 
+**Redux 문서**
+- [[Redux 설정|Redux 설정 & 구조]]
+- [[Redux 흐름|Redux 흐름 정리]]
+- [[Ducks 패턴]]
+
+**실습**
+- [[간단한 Counter]]
+
