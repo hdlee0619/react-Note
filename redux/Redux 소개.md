@@ -64,6 +64,7 @@ Global state는 컴포넌트에서 생성되지 않는다.
 - [[Redux 설정|Redux 설정 & 구조]]
 - [[Redux 흐름|Redux 흐름 정리]]
 - [[Ducks 패턴]]
+- [[react/redux/hooks]]
 
 **실습**
 - [[간단한 Counter]]
